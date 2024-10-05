@@ -45,12 +45,14 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
 
   @override
   Widget build(BuildContext context) {
+    double deviceWidth=MediaQuery.of(context).size.width;
+    double deviceHeight=MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.purpleAccent,
+        //backgroundColor: Colors.purpleAccent,
         appBar: AppBar(
-          elevation: 20.0,
-          backgroundColor: Colors.purpleAccent,
+          //elevation: 20.0,
+          backgroundColor: Colors.white,
           iconTheme: const IconThemeData(
             color: Colors.black,
             size: 35.0,
@@ -61,6 +63,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
               borderRadius: BorderRadius.circular(10.0),
             ),
             child: TextField(
+
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 15.0,
@@ -97,13 +100,67 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
         body: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            const Text("Most Searched"),
-            ListView(
-              scrollDirection: Axis.horizontal,
-              children: const [
-                ItemCard(image: "assets/balenciaga.jpg", price: "ksh. 2,000", description: "Balenciaga")
-              ],
-            )
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: MyFonts(text: "Recently Added", googleFont: "Playfair Display",weight: FontWeight.bold,size: 15.0,),
+            ),
+            SizedBox(
+              height: deviceHeight/3.3,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10.0),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    ItemCard(image: "assets/balenciaga.jpg", price: "ksh. 2,000", description: "Balenciaga size 38"),
+                    ItemCard(image: "assets/black_airforce.jpg", price: "ksh. 2,500", description: "Customized black air force 1 size 42"),
+                    ItemCard(image: "assets/black_nike.jpg", price: "ksh. 1,500", description: "Black nike sport shoes size 40"),
+                    ItemCard(image: "assets/vans.jpg", price: "ksh. 1,200", description: "Vans size 43"),
+
+                  ],
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: MyFonts(text: "Just for you", googleFont: "Playfair Display",weight: FontWeight.bold,size: 15.0,),
+            ),
+            SizedBox(
+              height: deviceHeight/3.3,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10.0),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    ItemCard(image: "assets/balenciaga.jpg", price: "ksh. 2,000", description: "Balenciaga size 38"),
+                    ItemCard(image: "assets/black_airforce.jpg", price: "ksh. 2,500", description: "Customized black air force 1 size 42"),
+                    ItemCard(image: "assets/black_nike.jpg", price: "ksh. 1,500", description: "Black nike sport shoes size 40"),
+                    ItemCard(image: "assets/vans.jpg", price: "ksh. 1,200", description: "Vans size 43"),
+
+                  ],
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: MyFonts(text: "Most Searched", googleFont: "Playfair Display",weight: FontWeight.bold,size: 15.0,),
+            ),
+            SizedBox(
+              height: deviceHeight/3.3,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10.0),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    ItemCard(image: "assets/balenciaga.jpg", price: "ksh. 2,000", description: "Balenciaga size 38"),
+                    ItemCard(image: "assets/black_airforce.jpg", price: "ksh. 2,500", description: "Customized black air force 1 size 42"),
+                    ItemCard(image: "assets/black_nike.jpg", price: "ksh. 1,500", description: "Black nike sport shoes size 40"),
+                    ItemCard(image: "assets/vans.jpg", price: "ksh. 1,200", description: "Vans size 43"),
+
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 20.0,)
           ],
         ),
 
